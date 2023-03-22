@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <!-- bản phát triển (development), bao gồm những cảnh báo hữu ích trong console -->
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  </head>
+  <body>
+    <div id="app">{{message}}</div>
+    <div id="app2">
+      <span v-bind:title="message"> Drag to this to reveal message </span>
+    </div>
+
+    <div id="app3">
+        <ol>
+            <li v-for="item in todos">
+                {{item.text}}
+            </li>
+        </ol>
+    </div>
+    <div id="app4">
+        <h1>{{message}}</h1>
+        <input type="text" v-model="message">
+    </div>
+    <todo-item></todo-item>
+
+
+
+    <script>
+      var app = new Vue({
+        el: "#app2",
+        data: {
+          message: "Do you wanna build a vue project",
+        },
+      });
+      //v-for
+      var app3 = new Vue({
+        el: "#app3",
+        data: {
+          todos: [
+            { text: "Hoc Javascript" },
+            { text: "Hoc Vue" },
+            { text: "Xay dung gi do good" },
+          ],
+        },
+      });
+      var app4 = new Vue({
+        el: '#app4',
+        data: {
+            message: 'before'
+        }
+      })
+      // Vue Component 
+      Vue.component('todo-item',{
+        template: '<li>Day la 1 muc luc to do </li>'
+      })
+    </script>
+  </body>
+</html>
