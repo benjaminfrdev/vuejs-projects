@@ -49,11 +49,29 @@
         </todo-item>
       </ol>
     </div>
+
+
+    <!-- Template syntax -->
+    <div id="template-app">
+    <span>Thông điệp : {{msg}}</span>
+    </div>
+
+
     <script>
       Vue.component("todo-item", {
         props: ["todo"],
         template: "<li>{{todo.text}}</li>",
       });
+      
+      var templateApp = new Vue({
+        el:'#template-app',
+        data: {
+          msg: 'biến của Vue instance'
+        }
+      })
+
+
+      
       var app7 = new Vue({
         el: "#app7",
         data: {
