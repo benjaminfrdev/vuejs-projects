@@ -20,7 +20,7 @@
         <a href="#" class="navbar-brand">My Vue</a>
         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
           <li class="nav-item" v-for="link in links">
-            <a :href="link.url" class="nav-link" aria-current="page">{{link.text}}</a>
+            <a :href="link.url" ::key="" class="nav-link" aria-current="page">{{link.text}}</a>
           </li>
         </ul>
       </div>
