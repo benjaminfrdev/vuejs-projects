@@ -10,7 +10,6 @@ import Timeline from './components/Timeline.vue';
       </div>
   </div>
 
-  <HelloWorld msg="Vite + Vue" />
 </template>
 
 <style scoped>

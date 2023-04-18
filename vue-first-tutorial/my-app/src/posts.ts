@@ -8,6 +8,9 @@ export interface Post {
     
 }
 
+export interface TimeLinePost extends Omit<Post, "created"> {
+    created: DateTime
+}
 
 export const today: Post = {
     id: "1",
