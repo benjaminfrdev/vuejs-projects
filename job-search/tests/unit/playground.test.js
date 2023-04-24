@@ -1,8 +1,7 @@
-import {describe,it, expect} from "vitest";
+import {describe, it,expect } from "vitest";
 
-
-describe("basic math", () => {
-    it("adds two numbers", () => {
-        expect(1 + 1).toBe(2);
+describe("basic caculation",()=> {
+    it("add two number", ()=>{
+        expect(1 +1).toBe(2);
     })
 })
