@@ -17,7 +17,6 @@
           </ul>
         </nav>
         <div class="ml-auto flex h-full items-center">
-          <p>{{ isLoggedIn }}</p>
           <profile-image v-if="isLoggedIn" />
           <action-button v-else @:click="loginUser" />
         </div>
@@ -38,6 +37,10 @@ export default {
   },
   methods: {},
   setup(props) {
+    let isLoggedIn = ref(false);
+    const loginUser = () => {
+        isLoggedIn.value = true
+    }
     return {
       company: "Developer Careers",
       author: {
@@ -53,7 +56,8 @@ export default {
         "Students",
         "Jobs",
       ],
-      isLoggedIn: false,
+      isLoggedIn,
+      loginUser
     };
   },
 };
